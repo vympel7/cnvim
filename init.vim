@@ -28,9 +28,9 @@ nnoremap <leader>cv :q!<CR>
 nnoremap <leader>csv :normal <leader>sv<CR> :normal <leader>cv<CR>
 " }}}
 
-
 " Mappings
-" bring line down {{{
+" {{{
+" bring line down
 nnoremap <M-k> ddkP
 " bring line up
 nnoremap <M-j> ddp
@@ -51,4 +51,4 @@ endfunction
 " Abbreviations
 autocmd FileType c :inoreabbrev <buffer> mainc <esc>ggi#include<stdio.h><cr><cr><cr>int main(int argc, char** argv)<cr>{<cr><cr>return 0;<cr>}<esc>
 autocmd FileType c :inoreabbrev <buffer> mainvc <esc>ggi#include<stdio.h><cr><cr><cr>int main(void)<cr>{<cr><cr>return 0;<cr>}<esc>
-autocmd FileType c :inoreabbrev <buffer> incc <C-R>=Incc()<CR><esc>Go#endif
+autocmd FileType c :inoreabbrev <buffer> incc <esc>G$?#include<CR>o<esc>o<C-R>=Incc()<CR><esc>Go<esc>o#endif
