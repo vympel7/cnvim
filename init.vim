@@ -31,9 +31,9 @@ nnoremap <leader>csv :normal <leader>sv<CR> :normal <leader>cv<CR>
 " Mappings
 " {{{
 " bring line down
-nnoremap <M-k> ddkP
-" bring line up
 nnoremap <M-j> ddp
+" bring line up
+nnoremap <M-k> kddp<esc>k
 " duplicate line
 nnoremap <S-d> yyp
 " open all folders
