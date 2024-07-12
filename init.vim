@@ -5,11 +5,12 @@ set numberwidth=1
 set norelativenumber
 set wrap
 set shiftround
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-let mapleader=";"
 set cindent
+set softtabstop=0
+set shiftwidth=4
+set tabstop=4
+set noexpandtab
+let mapleader=";"
 set foldmethod=marker
 " }}}
 
@@ -52,3 +53,5 @@ endfunction
 autocmd FileType c :inoreabbrev <buffer> mainc <esc>ggi#include<stdio.h><cr><cr><cr>int main(int argc, char** argv)<cr>{<cr><cr>return 0;<cr>}<esc>
 autocmd FileType c :inoreabbrev <buffer> mainvc <esc>ggi#include<stdio.h><cr><cr><cr>int main(void)<cr>{<cr><cr>return 0;<cr>}<esc>
 autocmd FileType c :inoreabbrev <buffer> incc <esc>G$?#include<CR>o<esc>o<C-R>=Incc()<CR><esc>Go<esc>o#endif
+autocmd FileType python :inoreabbrev <buffer> mainpy <esc>ggi<cr><cr>def main():<cr>pass<cr><cr><cr><esc>0iif __name__ == '__main__':<cr>main()<esc>
+
