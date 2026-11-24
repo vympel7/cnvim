@@ -2,7 +2,7 @@
 " {{{
 set number
 set numberwidth=1
-set norelativenumber
+set relativenumber
 set wrap
 set shiftround
 set cindent
@@ -12,10 +12,13 @@ set tabstop=4
 set noexpandtab
 let mapleader=";"
 set foldmethod=marker
+set synmaxcol=8192
 " }}}
 
 " Set .h files as c files
 autocmd BufEnter *.h set filetype=c
+" Set .sage files as py files
+autocmd BufEnter *.sage set filetype=python
 
 " init.vim access
 " {{{
@@ -52,6 +55,7 @@ endfunction
 " Abbreviations
 autocmd FileType c :inoreabbrev <buffer> mainc <esc>ggi#include<stdio.h><cr><cr><cr>int main(int argc, char** argv)<cr>{<cr><cr>return 0;<cr>}<esc>
 autocmd FileType c :inoreabbrev <buffer> mainvc <esc>ggi#include<stdio.h><cr><cr><cr>int main(void)<cr>{<cr><cr>return 0;<cr>}<esc>
-autocmd FileType c :inoreabbrev <buffer> incc <esc>G$?#include<CR>o<esc>o<C-R>=Incc()<CR><esc>Go<esc>o#endif
+autocmd FileType c :inoreabbrev <buffer> incc <esc>ggo<C-R>=Incc()<CR><esc>Go<esc>o#endif<esc>
 autocmd FileType python :inoreabbrev <buffer> mainpy <esc>ggi<cr><cr>def main():<cr>pass<cr><cr><cr><esc>0iif __name__ == '__main__':<cr>main()<esc>
-
+autocmd FileType python :inoreabbrev <buffer> pwnpy <esc>ggifrom pwn import *<cr><cr>def main():<cr>io = remote() if args.REMOTE else process(['python', ''])<cr><cr>io.close()<cr><cr><cr><esc>0iif __name__ == '__main__':<cr>main()<esc>
+autocmd FileType python :inoreabbrev <buffer> rsd <esc>aio.recvline().strip().decode()<esc>
